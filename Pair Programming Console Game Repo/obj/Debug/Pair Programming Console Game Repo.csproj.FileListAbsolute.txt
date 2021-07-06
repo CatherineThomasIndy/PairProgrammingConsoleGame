@@ -1,0 +1,6 @@
+C:\Users\catie\Source\Repos\Pair-Programming-Console-Game\Pair Programming Console Game Repo\bin\Debug\Pair Programming Console Game Repo.dll
+C:\Users\catie\Source\Repos\Pair-Programming-Console-Game\Pair Programming Console Game Repo\bin\Debug\Pair Programming Console Game Repo.pdb
+C:\Users\catie\Source\Repos\Pair-Programming-Console-Game\Pair Programming Console Game Repo\obj\Debug\Pair Programming Console Game Repo.csproj.AssemblyReference.cache
+C:\Users\catie\Source\Repos\Pair-Programming-Console-Game\Pair Programming Console Game Repo\obj\Debug\Pair Programming Console Game Repo.csproj.CoreCompileInputs.cache
+C:\Users\catie\Source\Repos\Pair-Programming-Console-Game\Pair Programming Console Game Repo\obj\Debug\Pair Programming Console Game Repo.dll
+C:\Users\catie\Source\Repos\Pair-Programming-Console-Game\Pair Programming Console Game Repo\obj\Debug\Pair Programming Console Game Repo.pdb

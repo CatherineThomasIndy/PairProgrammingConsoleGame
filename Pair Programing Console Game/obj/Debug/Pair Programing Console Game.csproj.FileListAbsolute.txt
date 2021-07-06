@@ -12,6 +12,6 @@ C:\Users\catie\Source\Repos\Pair-Programming-Console-Game\Pair Programing Consol
 C:\Users\catie\Source\Repos\Pair-Programming-Console-Game\Pair Programing Console Game\bin\Debug\Pair Programing Console Game.exe.config
 C:\Users\catie\Source\Repos\Pair-Programming-Console-Game\Pair Programing Console Game\bin\Debug\Pair Programing Console Game.exe
 C:\Users\catie\Source\Repos\Pair-Programming-Console-Game\Pair Programing Console Game\bin\Debug\Pair Programing Console Game.pdb
-C:\Users\catie\Source\Repos\Pair-Programming-Console-Game\Pair Programing Console Game\bin\Debug\Repository.dll
-C:\Users\catie\Source\Repos\Pair-Programming-Console-Game\Pair Programing Console Game\bin\Debug\Repository.pdb
 C:\Users\catie\Source\Repos\Pair-Programming-Console-Game\Pair Programing Console Game\obj\Debug\Pair Programing Console Game.csproj.CopyComplete
+C:\Users\catie\Source\Repos\Pair-Programming-Console-Game\Pair Programing Console Game\bin\Debug\Pair Programming Console Game Repo.dll
+C:\Users\catie\Source\Repos\Pair-Programming-Console-Game\Pair Programing Console Game\bin\Debug\Pair Programming Console Game Repo.pdb

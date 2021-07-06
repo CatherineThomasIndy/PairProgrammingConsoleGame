@@ -76,7 +76,9 @@ namespace Repository
 
         public string DangerousSituation()
         {
-            return "Your crew could not survive. Start Over?";
+            return "Your crew could not survive. Start Over?\n" +
+                "1. Yes\n" +
+                "2. No, quit the game\n";
         }
     }
 

@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F7D5F425-BC9A-4AA6-9691-5AB372EE9F13}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Pair_Programing_Console_Game</RootNamespace>
-    <AssemblyName>Pair Programing Console Game</AssemblyName>
+    <ProjectGuid>{AA403026-9B2E-4BB1-B56B-36F80EEA8B09}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pair_Programming_Console_Game_Repo</RootNamespace>
+    <AssemblyName>Pair Programming Console Game Repo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,18 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProgramUI.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="BasicSelections.cs" />
+    <Compile Include="StoryElements.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Pair Programming Console Game Repo\Pair Programming Console Game Repo.csproj">
-      <Project>{aa403026-9b2e-4bb1-b56b-36f80eea8b09}</Project>
-      <Name>Pair Programming Console Game Repo</Name>
-    </ProjectReference>
+    <Compile Include="WrongSelections.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,5 +1,5 @@
-﻿using Repository;
-using System;
+﻿using System;
+using Pair_Programming_Console_Game_Repo;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace Pair_Programing_Console_Game
 {
-    class ProgramUI
+    public class ProgramUI
     {
         BasicSelections _basicRepo = new BasicSelections();
-        WrongSelections _wrongRepo = new WrongSelections();
         StoryElements _storyRepo = new StoryElements();
+        WrongSelections _wrongRepo = new WrongSelections();
+        
         private bool _isRunning = true;
         bool hasMap = false;
 
@@ -112,6 +113,7 @@ namespace Pair_Programing_Console_Game
 
         private void ChapterOne()
         {
+            Console.Clear();
             Console.WriteLine("Looking at the map and the stars, you realize that you are completely lost.\n" +
                 "The only thing to do now is to pick a direction and sail.");
             _basicRepo.GetAllDirections();
@@ -121,16 +123,108 @@ namespace Pair_Programing_Console_Game
             {
                 case "1": //n
                     _basicRepo.TravelNorth();
-                    
+                    Console.ReadKey();
+                    _storyRepo.RockyOutcrop();
+                    Console.ReadKey();
+                    DoYouContinue();
+                    string userInput = Console.ReadLine();
+                    if (userInput == "1")
+                    {
+                        _wrongRepo.RockyOutcropContinue();
+                        Console.ReadKey();
+                        _basicRepo.DangerousSituation();
+                        string continueInput = Console.ReadLine();
+                        if (continueInput == "1")
+                        {
+                            ChapterOne();
+                        }
+                        else QuitGame();
+                    }
+                    else if (userInput == "2")
+                    {
+                        _basicRepo.YouReturn();
+                        Console.ReadKey();
+                        ChapterOne();
+                    }
+                    else _basicRepo.InvalidSelection();
+                    Console.ReadKey();
+                    ChapterOne();
                     break;
                 case "2": //s
                     _basicRepo.TravelSouth();
+                    Console.ReadKey();
+                    _storyRepo.GiantWhirlpool();
+                    Console.ReadKey();
+                    DoYouContinue();
+                    string userInput2 = Console.ReadLine();
+                    if (userInput2 == "1")
+                    {
+                        _wrongRepo.WhirlpoolContinue();
+                        Console.ReadKey();
+                        _basicRepo.DangerousSituation();
+                        string continueInput = Console.ReadLine();
+                        if (continueInput == "1")
+                        {
+                            ChapterOne();
+                        }
+                        else QuitGame();
+                    }
+                    else if (userInput2 == "2")
+                    {
+                        _basicRepo.YouReturn();
+                        Console.ReadKey();
+                        ChapterOne();
+                    }
+                    else _basicRepo.InvalidSelection();
+                    Console.ReadKey();
+                    ChapterOne();
                     break;
                 case "3": //e
                     _basicRepo.TravelEast();
+                    Console.ReadKey();
+                    _storyRepo.MysteriousIsland();
+                    string userInput3 = Console.ReadLine();
+                    if (userInput3 == "2")
+                    {
+                        _basicRepo.YouReturn();
+                        ChapterOne();
+                    }
+                    else if (userInput3 == "1")
+                    {
+                        ChapterTwo();
+                    }
+                    else _basicRepo.InvalidSelection();
+                    Console.ReadKey();
+                    ChapterOne();
                     break;
                 case "4": //w
                     _basicRepo.TravelWest();
+                    Console.ReadKey();
+                    _storyRepo.Kraken();
+                    Console.ReadKey();
+                    DoYouContinue();
+                    string userInput4 = Console.ReadLine();
+                    if (userInput4 == "1")
+                    {
+                        _wrongRepo.KrakenContinue();
+                        Console.ReadKey();
+                        _basicRepo.DangerousSituation();
+                        string continueInput = Console.ReadLine();
+                        if (continueInput == "1")
+                        {
+                            ChapterOne();
+                        }
+                        else QuitGame();
+                    }
+                    else if (userInput4 == "2")
+                    {
+                        _basicRepo.YouReturn();
+                        Console.ReadKey();
+                        ChapterOne();
+                    }
+                    else _basicRepo.InvalidSelection();
+                    Console.ReadKey();
+                    ChapterOne();
                     break;
                 case "5":
                     _basicRepo.OtherOptions();
@@ -141,34 +235,279 @@ namespace Pair_Programing_Console_Game
             }
         }
 
-
-        private void SelectADirection()
+        private void ChapterTwo()
         {
+            Console.Clear();
+            Console.WriteLine("Ignoring Charles' squawking, you arrive at the mysterious island and drop the anchor. \n" +
+                "You and your crew find yourselves on the beach wondering where to go next.\n" +
+                "To the north, you can see the entrance of a cave. To the south, you catch a glimpse of dilapidated ruins.\n" +
+                "To the east is extremely dense jungle. To the west is your ship.");
             _basicRepo.GetAllDirections();
-            string userInput = Console.ReadLine();
+            string input = Console.ReadLine();
 
-            switch (userInput)
+            switch (input)
             {
-                case "1":
+                case "1": //n
                     _basicRepo.TravelNorth();
+                    Console.ReadKey();
+                    _storyRepo.IslandCave();
+                    Console.ReadKey();
+                    DoYouContinue();
+                    string userInput = Console.ReadLine();
+                    if (userInput == "1")
+                    {
+                        _storyRepo.Skeleton();
+                        _storyRepo.SkeletonExamine();
+                        string examineInput = Console.ReadLine();
+                        switch (examineInput)
+                        {
+                            case "1":
+                                _storyRepo.Journal();
+                                Console.ReadKey();
+                                return;
+                            case "2":
+                                _storyRepo.Map();
+                                Console.ReadKey();
+                                hasMap = true;
+                                return;
+                            case "3":
+                                _storyRepo.MapAndJournal();
+                                Console.ReadKey();
+                                hasMap = true;
+                                return;
+                            case "4":
+                                Console.WriteLine("You decide to return to the beach.");
+                                Console.ReadKey();
+                                ChapterTwo();
+                                break;
+                            default:
+                                _basicRepo.InvalidSelection();
+                                ChapterTwo();
+                                break;
+                        }
+                    }
+                    else if (userInput == "2")
+                    {
+                        _basicRepo.YouReturn();
+                        Console.ReadKey();
+                        ChapterTwo();
+                    }
+                    else _basicRepo.InvalidSelection();
+                    Console.ReadKey();
+                    ChapterTwo();
                     break;
-                case "2":
+                case "2": //s
                     _basicRepo.TravelSouth();
+                    Console.ReadKey();
+                    _storyRepo.Ruins();
+                    Console.ReadKey();
+                    Console.WriteLine("You could investigate the ruins further if you wish, or return to the beach.\n" +
+                        "1. Investigate\n" +
+                        "2. Return to the beach\n");
+                    string userInput2 = Console.ReadLine();
+                    if (userInput2 == "1")
+                    {
+                        ChapterThree();
+                    }
+                    else if (userInput2 == "2")
+                    {
+                        Console.WriteLine("You decide to return to the beach.");
+                        Console.ReadKey();
+                        ChapterTwo();
+                    }
+                    else _basicRepo.InvalidSelection();
+                    Console.ReadKey();
+                    ChapterTwo();
                     break;
-                case "3":
+                case "3": //e
                     _basicRepo.TravelEast();
+                    Console.ReadKey();
+                    _storyRepo.DenseJungle();
+                    string userInput3 = Console.ReadLine();
+                    if (userInput3 == "1")
+                    {
+                        _wrongRepo.JungleContinue();
+                        Console.ReadKey();
+                        _basicRepo.DangerousSituation();
+                        string continueInput = Console.ReadLine();
+                        if (continueInput == "1")
+                        {
+                            ChapterTwo();
+                        }
+                        else QuitGame();
+                    }
+                    else if (userInput3 == "2")
+                    {
+                        _basicRepo.YouReturn();
+                        ChapterTwo();
+                    }
+                    else _basicRepo.InvalidSelection();
+                    Console.ReadKey();
+                    ChapterTwo();
                     break;
-                case "4":
+                case "4": //w
                     _basicRepo.TravelWest();
+                    Console.ReadKey();
+                    if (hasMap == true)
+                    {
+                        _storyRepo.HomeWithoutJournal();
+                    }
+                    else
+                    {
+                        _storyRepo.IslandShipReturn();
+                    }
+                    break;
+                case "5":
+                    _basicRepo.OtherOptions();
                     break;
                 default:
                     _basicRepo.InvalidDirection();
-                    Console.ReadKey();
-                    SelectADirection();
-                    break;
-
+                    return;
             }
         }
+
+        private void ChapterThree()
+        {
+            Console.Clear();
+            Console.WriteLine("If all the walls were still standing, you would be in a room with three statues: one to the North, one to the East, and one to the South.\n" +
+                "You can examine the statues further, or exit westward to go back to the beach.\n");
+            _basicRepo.GetAllDirections();
+            string input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "1":
+                    _storyRepo.MermaidStatue();
+                    if (hasMap == true)
+                    {
+                        _storyRepo.MermaidDoor();
+                        Console.ReadKey();
+                        DoYouContinue();
+                        string continueInput = Console.ReadLine();
+                        if (continueInput == "1")
+                        {
+                            ChapterFour();
+                        }
+                        else
+                        {
+                            _basicRepo.YouReturn();
+                            ChapterThree();
+                        }
+                    }
+                    else ChapterThree();
+                    break;
+                case "2":
+                    _storyRepo.Skull();
+                    Console.ReadKey();
+                    DoYouContinue();
+                    string continueInput2 = Console.ReadLine();
+                    if(continueInput2 == "1")
+                    {
+                        _wrongRepo.SkullContinue();
+                        Console.ReadKey();
+                        _basicRepo.DangerousSituation();
+                        string continueInput = Console.ReadLine();
+                        if (continueInput == "1")
+                        {
+                            ChapterThree();
+                        }
+                        else QuitGame();
+                    }
+                    else if(continueInput2 == "2")
+                    {
+                        _basicRepo.YouReturn();
+                        ChapterThree();
+                    }
+                    else
+                    {
+                        _basicRepo.InvalidSelection();
+                        ChapterThree();
+                    }
+                    break;
+                case "3":
+                    _storyRepo.SnakeTreasure();
+                    DoYouContinue();
+                    string continueInput3 = Console.ReadLine();
+                    if(continueInput3 == "1")
+                    {
+                        _wrongRepo.SnakeTreasureContinue();
+                        Console.ReadKey();
+                        _basicRepo.DangerousSituation();
+                        string continueInput = Console.ReadLine();
+                        if (continueInput == "1")
+                        {
+                            ChapterThree();
+                        }
+                        else QuitGame();
+                    }
+                    break;
+                case "4":
+                    _basicRepo.YouReturn();
+                    ChapterTwo();
+                    break;
+                case "5":
+                    _basicRepo.OtherOptions();
+                    break;
+                default:
+                    _basicRepo.InvalidDirection();
+                    return;
+            }
+
+        }
+
+        private void ChapterFour()
+        {
+            Console.Clear();
+            _storyRepo.UndergroundTemple();
+            Console.WriteLine("1. Draw the dagger\n" +
+                "2. Draw the sword\n" +
+                "3. Drawe the pistol\n");
+            string input = Console.ReadLine();
+            if (input == "1")
+            {
+                _wrongRepo.DuelDaggerChoice();
+                Console.ReadKey();
+                _basicRepo.DangerousSituation();
+                string continueInput = Console.ReadLine();
+                if (continueInput == "1")
+                {
+                    ChapterFour();
+                }
+                else QuitGame();
+            }
+            else if (input == "2")
+            {
+                _wrongRepo.DuelSwordChoice();
+                Console.ReadKey();
+                _basicRepo.DangerousSituation();
+                string continueInput = Console.ReadLine();
+                if (continueInput == "1")
+                {
+                    ChapterFour();
+                }
+                else QuitGame();
+            }
+            else if (input == "3")
+            {
+                _storyRepo.Escape();
+                Console.ReadKey();
+                Console.WriteLine("THE END");
+                Console.ReadKey();
+                Menu();
+            }
+            else
+            {
+                _basicRepo.InvalidSelection();
+                ChapterFour();
+            }
+        }
+        
+        private void DoYouContinue()
+        {
+            Console.WriteLine("1. Yes\n" +
+                "2. No\n");
+        }
+
 
         //Display Save Point
         private void DisplaySavePoint()
@@ -230,7 +569,7 @@ namespace Pair_Programing_Console_Game
             switch (userInput)
             {
                 case "1":
-                    { if (hasMap = false)
+                    { if (hasMap == false)
                         {
                             _basicRepo.Inventory();
                         }

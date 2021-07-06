@@ -45,13 +45,14 @@ namespace Repository
         {
             return "You and your crew let greed take over, and start to pry out every jewel that is on the skull.\n"+
                 "You here a creaking sound, as if the ancient ruins had sprung to life.\n"+
-                "Sudenly a wizzing sound fils the air and you feel a red hot piercing throughout your body. \n"+
-                "You look around, vision bluring, and see what looks like green tipped poisen arrows protruding out of your crew, it occurs to you that maybe trying to steal from the dead was probably a bad idea.\n";
+                "Sudenly a whizzing sound fills the air and you feel a red hot piercing throughout your body. \n"+
+                "You look around, vision bluring, and see what looks like green-tipped poison arrows protruding out of your crew. \n" +
+                "It occurs to you that maybe trying to steal from the dead was probably a bad idea.\n";
         }
 
         public string SnakeTreasureContinue ()
         {
-            return "Seeing that that snake statue is coiled around a chest, you dedide that there must be treasure beneith it.\n" +
+            return "Seeing that that snake statue is coiled around a chest, you decide that there must be treasure beneath it.\n" +
                 "You open up the chest awaiting to see your vast riches, when suddenly your vision goes black and you feel a sharp pain in your neck.\n" +
                 "Reaching up you feel a snake clamped to your neck, with its body slowly ensnaring yours.\n" +
                 "As your crew bolts back towards the boat leaving you to your fate, it occurs to you that maybe a snake is a bad omen and letting your greed get the better of you was probably a bad idea.\n";
@@ -59,29 +60,29 @@ namespace Repository
 
         public string BeachDoorContinue ()
         {
-            return "Opening up the door you see the beach inforont of you.\n"+
-                "You havent felt the salt water on your skin in days, and run towards the beach.\n"+
+            return "Opening up the door you see the beach in front of you.\n"+
+                "You haven't felt the salt water on your skin in days, and run towards the beach.\n"+
                 "Little did you know, that there was a sharp cliff that fell direclty into shark infested waters, lying in front of you.\n"+
-                "As you fall awaiting to be a snack for the hungry sharks bellow, it occurs to you that running through the door without paying attention was probably a bad idea.";
+                "As you fall awaiting to be a snack for the hungry sharks bellow, it occurs to you that running through the door without paying attention was probably a bad idea.\n";
         }
 
-        public string DualSwordChoice ()
+        public string DuelSwordChoice ()
         {
-            return "You choose you trusty sword for it has lead you through many a battle!\n"+
+            return "You choose you trusty sword for it has led you through many a battle!\n"+
                 "Swinging expertly, you charge at Sir-Hooks-Alot.\n"+
                 "But Sir-Hooks-Alot, has a trick up sleeve, for the close quarters of the cavern favor close range weapons. \n"+
-                "He pulls out his dager and quickly parries your sword, before landing a decisive blow to your chest! \n"+
-                "You drop your sword and his it clanges on the ground it occurs to you that choosing your sword was probably a bad idea.";
+                "He pulls out his dagger and quickly parries your sword, before landing a decisive blow to your chest! \n"+
+                "You drop your sword, and as it clangs on the ground it occurs to you that choosing your sword was probably a bad idea.\n";
         }
 
         public string DualDagerChoice ()
         {
-            return "You notice that the demensions of the cave favor a short blade, and pull your dager.\n"+
+            return "You notice that the dimensions of the cave favor a short blade, and you pull your dagger.\n"+
                 "Parrying expertly, you seem to be gaining the advatage over Sir-Hooks-Alot. \n"+
-                "Howver, you fail to notice that he is up to his dirty tricks.\n"+
+                "However, you fail to notice that he is up to his dirty tricks.\n"+
                 "After a great parry he throws sand in your eyes, pulls out his pistol, and a bang rings through the cavern.\n"+
                 "You look down and see a red spot slowly blossoming accross your chest. \n"+
-                "Dropping to your knees it occurs to you that choosing your dager was probably a bad idea.";
+                "Dropping to your knees it occurs to you that choosing your dagger was probably a bad idea.\n";
         }
                 
     }
